@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net45;</TargetFrameworks>
+    <RootNamespace>MikValSor.Runtime.Serialization</RootNamespace>
+    <Authors>Mikkel Valentin Sørensen</Authors>
+    <Company>Mikkel Valentin Sørensen</Company>
+    <Description>Library for validating that .NET types are serializable and deserialize with System.Runtime.Serialization.</Description>
+    <Copyright>Mikkel Valentin Sørensen</Copyright>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/mikkelvalentinsorensen/MikValSor.SerializableValidator/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/mikkelvalentinsorensen/MikValSor.SerializableValidator</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/mikkelvalentinsorensen/MikValSor.SerializableValidator</RepositoryUrl>
+    <RepositoryType>GitHub</RepositoryType>
+    <PackageTags>Serialization SerializableValidator Serializable Validator .NET MikValSor</PackageTags>
+    <PackageReleaseNotes>v1.0.0
+- Initial release.</PackageReleaseNotes>
+    <NeutralLanguage>en</NeutralLanguage>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netstandard2.0\MikValSor.SerializableValidator.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netstandard2.0\MikValSor.SerializableValidator.xml</DocumentationFile>
+  </PropertyGroup>
+
+</Project>

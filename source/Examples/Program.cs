@@ -1,7 +1,12 @@
-Library for validating that .NET classes are serializable and deserialize with System.Runtime.Serialization. 
+﻿class Program
+{
 
-## Example:
-```cs
+static void Main(string[] args)
+{
+	var program = new Program();
+	program.Validate();
+}
+
 class MyClass
 {
 	public string Value;
@@ -44,4 +49,7 @@ void Validate()
 	Is myObject serializable: False
 	Is myOtherObject serializable: True
 **/
-```
+
+
+
+}
