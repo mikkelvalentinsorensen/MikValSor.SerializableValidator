@@ -220,5 +220,27 @@ namespace MikValSor.Runtime.Serialization.Test
 			//Assert
 			Assert.IsFalse(actual);
 		}
+
+		[Test]
+		public void IsSerializable_object_null()
+		{
+			//Arrange
+			var validator = new SerializableValidator();
+			CorrectSerializableTestClass targetClass = null;
+
+			//Act
+			try
+			{
+				bool actual = validator.IsSerializable(targetClass);
+			}
+
+			//Assert
+			catch (ArgumentNullException)
+			{
+				Assert.Pass();
+				return;
+			}
+			Assert.Fail();
+		}
 	}
 }

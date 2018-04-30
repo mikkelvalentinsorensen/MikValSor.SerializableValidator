@@ -12,11 +12,15 @@
     <RepositoryUrl>https://github.com/mikkelvalentinsorensen/MikValSor.SerializableValidator</RepositoryUrl>
     <RepositoryType>GitHub</RepositoryType>
     <PackageTags>Serialization SerializableValidator Serializable Validator .NET MikValSor</PackageTags>
-    <PackageReleaseNotes>v1.0.0
+    <PackageReleaseNotes>v1.0.1
+- Changed target to not allow null.
+
+v1.0.0
 - Initial release.</PackageReleaseNotes>
     <NeutralLanguage>en</NeutralLanguage>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
