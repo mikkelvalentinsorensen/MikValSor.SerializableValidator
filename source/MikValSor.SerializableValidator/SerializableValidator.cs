@@ -127,9 +127,11 @@ namespace MikValSor.Runtime.Serialization
 		{
 			if (!targetType.IsSerializable) throw new TypeHasNoSerializableAttribute(targetType);
 
-			if (!targetType.GetInterfaces().Contains(ISerializableType)) throw new TypeDoesNotImplementISerializable(targetType);
-
-			EnsureDeserializeConstructors(targetType);
+			if (targetType.IsClass)
+			{
+				if (!targetType.GetInterfaces().Contains(ISerializableType)) throw new TypeDoesNotImplementISerializable(targetType);
+				EnsureDeserializeConstructors(targetType);
+			}
 		}
 
 		private readonly Type[] ConstructorParameterTypes = new Type[] { typeof(SerializationInfo), typeof(StreamingContext) };
@@ -159,7 +161,8 @@ namespace MikValSor.Runtime.Serialization
 				{typeof(string).FullName, true },
 				{typeof(uint).FullName, true },
 				{typeof(ulong).FullName, true },
-				{typeof(ushort).FullName, true }
+				{typeof(ushort).FullName, true },
+				{typeof(object).FullName, true }
 			};
 		private readonly object InsertionLockObject = new object();
 
