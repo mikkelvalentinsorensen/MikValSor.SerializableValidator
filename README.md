@@ -1,4 +1,4 @@
-Library for validating that .NET classes are serializable and deserialize with System.Runtime.Serialization. 
+Library for validating that .NET types are serializable and deserialize with System.Runtime.Serialization. 
 
 ## Example:
 ```cs
