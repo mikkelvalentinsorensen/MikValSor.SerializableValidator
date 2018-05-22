@@ -12,7 +12,11 @@
     <RepositoryUrl>https://github.com/mikkelvalentinsorensen/MikValSor.SerializableValidator</RepositoryUrl>
     <RepositoryType>GitHub</RepositoryType>
     <PackageTags>Serialization SerializableValidator Serializable Validator .NET MikValSor</PackageTags>
-    <PackageReleaseNotes>v1.0.3
+    <PackageReleaseNotes>v1.0.4
+- Added NullIsNotSerializable instead for ArgumentNullException
+- Changes names of Exceptions to have Exception in end of name.
+
+v1.0.3
 - Added singelton instance
 
 v1.0.2
@@ -26,7 +30,7 @@ v1.0.0
     <NeutralLanguage>en</NeutralLanguage>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.3</Version>
+    <Version>1.0.4</Version>
     <PackageIconUrl>https://raw.githubusercontent.com/mikkelvalentinsorensen/MikValSor/master/icon/icon.png</PackageIconUrl>
     <FileVersion>1.0.0.0</FileVersion>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
