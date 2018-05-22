@@ -33,12 +33,9 @@ namespace MikValSor.Runtime.Serialization
 		/// <returns>
 		///		Returns True if object is serializable.
 		/// </returns>
-		/// <exception cref="ArgumentNullException">
-		///		Throws System.ArgumentNullException if target is null.
-		/// </exception>
 		public bool IsSerializable(object target)
 		{
-			if (target == null) throw new ArgumentNullException(nameof(target));
+			if (target == null) return false;
 			try
 			{
 				EnsureSerializable(target.GetType());
@@ -91,12 +88,12 @@ namespace MikValSor.Runtime.Serialization
 		/// <exception cref="TypeHasNoSerializableAttribute">
 		///		Throws TypeHasNoSerializableAttribute is target does not have System.SerializableAttribute attribute on class.
 		/// </exception>
-		/// <exception cref="ArgumentNullException">
+		/// <exception cref="NullIsNotSerializable">
 		///		Throws System.ArgumentNullException if target is null.
 		/// </exception>
 		public void EnsureSerializable(object target)
 		{
-			if (target == null) throw new ArgumentNullException(nameof(target));
+			if (target == null) throw new NullIsNotSerializable();
 			EnsureSerializable(target.GetType());
 		}
 
