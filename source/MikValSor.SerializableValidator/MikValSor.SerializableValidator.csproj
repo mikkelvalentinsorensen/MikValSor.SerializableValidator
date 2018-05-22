@@ -12,7 +12,10 @@
     <RepositoryUrl>https://github.com/mikkelvalentinsorensen/MikValSor.SerializableValidator</RepositoryUrl>
     <RepositoryType>GitHub</RepositoryType>
     <PackageTags>Serialization SerializableValidator Serializable Validator .NET MikValSor</PackageTags>
-    <PackageReleaseNotes>v1.0.2
+    <PackageReleaseNotes>v1.0.3
+- Added singelton instance
+
+v1.0.2
 - Added support for structs
 
 v1.0.1
@@ -23,7 +26,7 @@ v1.0.0
     <NeutralLanguage>en</NeutralLanguage>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
     <PackageIconUrl>https://raw.githubusercontent.com/mikkelvalentinsorensen/MikValSor/master/icon/icon.png</PackageIconUrl>
   </PropertyGroup>
 
