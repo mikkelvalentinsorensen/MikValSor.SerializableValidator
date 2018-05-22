@@ -28,6 +28,8 @@ v1.0.0
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Version>1.0.3</Version>
     <PackageIconUrl>https://raw.githubusercontent.com/mikkelvalentinsorensen/MikValSor/master/icon/icon.png</PackageIconUrl>
+    <FileVersion>1.0.0.0</FileVersion>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
