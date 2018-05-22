@@ -79,13 +79,13 @@ namespace MikValSor.Runtime.Serialization
 		/// <param name="target">
 		///		Targeted object for serializable validation.
 		/// </param>
-		/// <exception cref="TypeDoesNotImplementISerializable">
+		/// <exception cref="TypeDoesNotImplementISerializableException">
 		///		Throws TypeDoesNotImplementISerializable is target class does not implement System.Runtime.Serialization.ISerializable.
 		/// </exception>
-		/// <exception cref="TypeHasNoDeserializeConstructor">
+		/// <exception cref="TypeHasNoDeserializeConstructorException">
 		///		Throws TypeHasNoDeserializeConstructor is target does not have class constructor with parameters System.Runtime.Serialization.SerializationInfo and System.Runtime.Serialization.StreamingContext.
 		/// </exception>
-		/// <exception cref="TypeHasNoSerializableAttribute">
+		/// <exception cref="TypeHasNoSerializableAttributeException">
 		///		Throws TypeHasNoSerializableAttribute is target does not have System.SerializableAttribute attribute on class.
 		/// </exception>
 		/// <exception cref="NullIsNotSerializable">
@@ -103,13 +103,13 @@ namespace MikValSor.Runtime.Serialization
 		/// <param name="targetType">
 		///		Targeted type for serializable validation.
 		/// </param>
-		/// <exception cref="TypeDoesNotImplementISerializable">
+		/// <exception cref="TypeDoesNotImplementISerializableException">
 		///		Throws TypeDoesNotImplementISerializable is targetType does not implement System.Runtime.Serialization.ISerializable.
 		/// </exception>
-		/// <exception cref="TypeHasNoDeserializeConstructor">
+		/// <exception cref="TypeHasNoDeserializeConstructorException">
 		///		Throws TypeHasNoDeserializeConstructor is targetType does not have class constructor with parameters System.Runtime.Serialization.SerializationInfo and System.Runtime.Serialization.StreamingContext.
 		/// </exception>
-		/// <exception cref="TypeHasNoSerializableAttribute">
+		/// <exception cref="TypeHasNoSerializableAttributeException">
 		///		Throws TypeHasNoSerializableAttribute is targetType does not have System.SerializableAttribute attribute on class.
 		/// </exception>
 		public void EnsureSerializable(Type targetType)
@@ -127,11 +127,11 @@ namespace MikValSor.Runtime.Serialization
 		private readonly Type ISerializableType = typeof(ISerializable);
 		private void EnsureSerializableUncached(Type targetType)
 		{
-			if (!targetType.IsSerializable) throw new TypeHasNoSerializableAttribute(targetType);
+			if (!targetType.IsSerializable) throw new TypeHasNoSerializableAttributeException(targetType);
 
 			if (targetType.IsClass)
 			{
-				if (!targetType.GetInterfaces().Contains(ISerializableType)) throw new TypeDoesNotImplementISerializable(targetType);
+				if (!targetType.GetInterfaces().Contains(ISerializableType)) throw new TypeDoesNotImplementISerializableException(targetType);
 				EnsureDeserializeConstructors(targetType);
 			}
 		}
@@ -145,7 +145,7 @@ namespace MikValSor.Runtime.Serialization
 			var privateConstructor = targetType.GetConstructor((BindingFlags.NonPublic | BindingFlags.Instance), null, ConstructorParameterTypes, null);
 			if (privateConstructor != null) return;
 
-			throw new TypeHasNoDeserializeConstructor(targetType);
+			throw new TypeHasNoDeserializeConstructorException(targetType);
 		}
 
 		private readonly Dictionary<string, bool> PreviousResults = new Dictionary<string, bool>()

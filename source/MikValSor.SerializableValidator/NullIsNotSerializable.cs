@@ -3,7 +3,7 @@
 namespace MikValSor.Runtime.Serialization
 {
 	/// <summary>
-	///		Exception class used for signaling when classes does not implement System.Runtime.Serialization.ISerializable interface.
+	///		Exception class used for signaling when null.
 	/// </summary>
 	public sealed class NullIsNotSerializable : NotSerializableException
 	{

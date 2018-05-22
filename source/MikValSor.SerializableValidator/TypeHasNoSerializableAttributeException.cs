@@ -5,9 +5,9 @@ namespace MikValSor.Runtime.Serialization
 	/// <summary>
 	///		Exception class used for signaling when classes are missing System.SerializableAttribute attribute.
 	/// </summary>
-	public sealed class TypeHasNoSerializableAttribute : NotSerializableException
+	public sealed class TypeHasNoSerializableAttributeException : NotSerializableException
 	{
-		internal TypeHasNoSerializableAttribute(Type type) : base($"Type: {type.FullName}")
+		internal TypeHasNoSerializableAttributeException(Type type) : base($"Type: {type.FullName}")
 		{
 			Data.Add("Type", type);
 		}
