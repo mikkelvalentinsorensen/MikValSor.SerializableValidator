@@ -11,13 +11,18 @@ namespace MikValSor.Runtime.Serialization
 	/// </summary>
 	public sealed class SerializableValidator
 	{
+		private readonly static Lazy<SerializableValidator> lazyInstance = new Lazy<SerializableValidator>(() => new SerializableValidator());
+		/// <summary>
+		///		Instance of SerializableValidator.
+		/// </summary>
+		public static SerializableValidator Instance => lazyInstance.Value;
+
 		/// <summary>
 		///		Construct a new instance of SerializableValidator.
 		/// </summary>
 		public SerializableValidator()
 		{
 		}
-
 
 		/// <summary>
 		///		Checks if target object is serializable.
