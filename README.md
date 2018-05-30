@@ -1,5 +1,7 @@
 Library for validating that .NET types are serializable and deserialize with System.Runtime.Serialization. 
 
+Nuget package: [https://www.nuget.org/packages/MikValSor.SerializableValidator](https://www.nuget.org/packages/MikValSor.SerializableValidator)
+
 ## Example:
 ```cs
 class MyClass
